@@ -1,5 +1,8 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible " be iMproved, required
+filetype off " required
+:set expandtab
+:set tabstop=2
+:set shiftwidth=2
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -17,6 +20,8 @@ Plugin 'nanotech/jellybeans.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+Plugin 'mattn/emmet-vim'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -29,5 +34,7 @@ set splitright
 let g:airline_theme='simple'
 
 map <C-n> :NERDTreeToggle<CR>
+let g:user_emmet_expandabbr_key = '<tab>'
+
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-autocmd vimenter * NERDTree
+" autocmd vimenter * NERDTree
